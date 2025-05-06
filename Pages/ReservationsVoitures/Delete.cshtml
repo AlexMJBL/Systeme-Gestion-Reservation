@@ -1,0 +1,55 @@
+﻿@page
+@model Reservations.Web.Pages.ReservationsVoitures.DeleteModel
+@{
+    ViewData["Title"] = "Suppression de réservation";
+}
+
+<h1 class="text-center text-danger mb-4">Suppression d'une réservation de voiture</h1>
+
+<div class="alert alert-warning" role="alert">
+    <strong>Attention :</strong> Cette action est irréversible. Souhaitez-vous vraiment supprimer cette réservation ?
+</div>
+
+<div class="card mb-4 shadow-sm">
+    <div class="card-header bg-secondary text-white">
+        Détails de la réservation
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3 fw-bold">Identifiant réservation</dt>
+            <dd class="col-sm-9">@Model.ReservationVoiture.Id</dd>
+
+            <dt class="col-sm-3 fw-bold">Prénom client</dt>
+            <dd class="col-sm-9">@Model.ReservationVoiture.PrenomClient</dd>
+
+            <dt class="col-sm-3 fw-bold">Nom client</dt>
+            <dd class="col-sm-9">@Model.ReservationVoiture.NomClient</dd>
+
+            <dt class="col-sm-3 fw-bold">Téléphone client</dt>
+            <dd class="col-sm-9">@Model.ReservationVoiture.TelephoneClient</dd>
+
+            <dt class="col-sm-3 fw-bold">Date de début</dt>
+            <dd class="col-sm-9">@Model.ReservationVoiture.DateDebut.ToString("yyyy-MM-dd")</dd>
+
+            <dt class="col-sm-3 fw-bold">Date de fin</dt>
+            <dd class="col-sm-9">@Model.ReservationVoiture.DateFin.ToString("yyyy-MM-dd")</dd>
+
+            <dt class="col-sm-3 fw-bold">Prix total</dt>
+            <dd class="col-sm-9">@Model.ReservationVoiture.Prix.ToString("C")</dd>
+
+            <dt class="col-sm-3 fw-bold">Voiture</dt>
+            <dd class="col-sm-9">
+                @Model.ReservationVoiture.Voiture.Id - @Model.ReservationVoiture.Voiture.Description
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<form method="post" class="mb-3">
+    <input asp-for="ReservationVoiture.Id" type="hidden" />
+    <div class="d-flex justify-content-start gap-3">
+        <input type="submit" value="Supprimer" class="btn btn-danger" />
+        <a asp-page="./Index" class="btn btn-secondary">Annuler</a>
+        <a asp-page="./Edit" asp-route-id="@Model.ReservationVoiture.Id" class="btn btn-outline-primary ms-auto">Modifier cette réservation</a>
+    </div>
+</form>

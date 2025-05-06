@@ -1,0 +1,26 @@
+Id;Desription;Prix-Journalier;TypeChambre;NombreLits;Climatisation;GrandeurM2;Balcon
+1;Chambre simple avec vue sur la cour;75;Simple;1;True;18;False
+2;Chambre double confortable;120;Double;2;True;25;True
+3;Suite spacieuse avec coin salon;200;Suite;2;True;40;True
+4;Chambre familiale avec lits superposes;150;Familiale;3;True;35;False
+5;Chambre de luxe avec decoration moderne;250;Luxe;1;True;45;True
+6;Penthouse avec terrasse panoramique;500;Penthouse;2;True;80;True
+7;Petite chambre simple, ideale pour une nuit;60;Simple;1;False;15;False
+8;Chambre double economique;90;Double;2;False;20;False
+9;Suite moderne pour couples;180;Suite;1;True;38;True
+10;Chambre familiale avec coin cuisine;160;Familiale;4;True;42;True
+11;Chambre de luxe en hauteur;240;Luxe;2;True;48;True
+12;Penthouse avec jacuzzi prive;480;Penthouse;2;True;85;True
+13;Chambre simple sans balcon;65;Simple;1;False;16;False
+14;Chambre double cote jardin;115;Double;2;True;23;True
+15;Suite avec espace de travail;190;Suite;2;True;37;True
+16;Chambre familiale proche de la piscine;155;Familiale;3;True;34;False
+17;Chambre de luxe avec eclairage d’ambiance;230;Luxe;1;True;43;True
+18;Penthouse dernier etage avec ascenseur prive;495;Penthouse;2;True;78;True
+19;Chambre simple minimaliste;70;Simple;1;False;17;False
+20;Double classique pour courts sejours;100;Double;2;False;22;False
+21;Suite vue mer;210;Suite;2;True;41;True
+22;Grande chambre familiale avec 2 lits doubles;170;Familiale;4;True;50;True
+23;Luxe avec mobilier en bois noble;260;Luxe;2;True;47;True
+24;Penthouse moderne avec vue sur la ville;490;Penthouse;2;True;82;True
+25;Chambre simple cosy et tranquille;68;Simple;1;True;19;False

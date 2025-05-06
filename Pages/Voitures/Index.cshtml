@@ -1,0 +1,36 @@
+﻿@page
+@model ProjetReservation.Pages.Voitures.IndexModel
+@{
+    ViewData["Title"] = "Index Voiture";
+}
+<h1 class="text-center my-4">Liste des voitures</h1>
+<p class="text-end">
+    <a class="btn btn-primary" asp-page="Create">Nouvelle voiture</a>
+</p>
+<table class="table table-striped table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Marque</th>
+            <th>Modèle</th>
+            <th>Année de fabrication</th>
+            <th>Prix Journalier</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var voiture in Model.Voitures)
+        {
+            <tr>
+                <td>@voiture.Marque</td>
+                <td>@voiture.Modele</td>
+                <td>@voiture.AnneeDeFabrication</td>
+                <td>@voiture.PrixJournalier</td>
+                <td>
+                    <a class="btn btn-warning btn-sm" asp-page="Edit" asp-route-id="@voiture.Id">Modifier</a> |
+                    <a class="btn btn-primary btn-sm" asp-page="Consulter" asp-route-id="@voiture.Id">Consulter</a> |
+                    <a class="btn btn-danger btn-sm" asp-page="Delete" asp-route-id="@voiture.Id">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,86 @@
+﻿@page
+@using Gestion_Reservation.Models
+@model ProjetReservation.Pages.ChambresHotels.CreateModel
+@{
+    ViewData["Title"] = "Ajout Chambre Hôtel";
+}
+
+<h1 class="text-center  mb-4">Ajouter une nouvelle chambre d'hôtel</h1>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form method="post" class="border rounded p-4 shadow-sm bg-light">
+           
+            <div class="form-group mb-3">
+                <label asp-for="ChambreHotel.Id" class="form-label"></label>
+                <input asp-for="ChambreHotel.Id" class="form-control" readonly />
+                <span asp-validation-for="ChambreHotel.Id" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="ChambreHotel.Description" class="form-label"></label>
+                <input asp-for="ChambreHotel.Description" class="form-control" />
+                <span asp-validation-for="ChambreHotel.Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="ChambreHotel.PrixJournalier" class="form-label"></label>
+                <input asp-for="ChambreHotel.PrixJournalier" class="form-control" />
+                <span asp-validation-for="ChambreHotel.PrixJournalier" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="ChambreHotel.TypeChambre" class="form-label"></label>
+                <select asp-for="ChambreHotel.TypeChambre" class="form-select">
+                    @foreach (var type in Enum.GetValues(typeof(TypeChambre)))
+                    {
+                        <option value="@type">@type</option>
+                    }
+                </select>
+                <span asp-validation-for="ChambreHotel.TypeChambre" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="ChambreHotel.NombreLits" class="form-label"></label>
+                <input asp-for="ChambreHotel.NombreLits" class="form-control" />
+                <span asp-validation-for="ChambreHotel.NombreLits" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="ChambreHotel.Climatisation" class="form-label"></label>
+                <select asp-for="ChambreHotel.Climatisation" class="form-select">
+                    <option value="true">Oui</option>
+                    <option value="false">Non</option>
+                </select>
+                <span asp-validation-for="ChambreHotel.Climatisation" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="ChambreHotel.GrandeurM2" class="form-label"></label>
+                <input asp-for="ChambreHotel.GrandeurM2" class="form-control" />
+                <span asp-validation-for="ChambreHotel.GrandeurM2" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-4">
+                <label asp-for="ChambreHotel.Balcon" class="form-label"></label>
+                <select asp-for="ChambreHotel.Balcon" class="form-select">
+                    <option value="true">Oui</option>
+                    <option value="false">Non</option>
+                </select>
+                <span asp-validation-for="ChambreHotel.Balcon" class="text-danger"></span>
+            </div>
+
+            <div class="d-grid">
+                <input type="submit" value="Enregistrer" class="btn btn-success" />
+            </div>
+        </form>
+
+        <div class="mt-3 text-center">
+            <a asp-page="Index" class="btn btn-outline-secondary">Retourner à la liste de chambres</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

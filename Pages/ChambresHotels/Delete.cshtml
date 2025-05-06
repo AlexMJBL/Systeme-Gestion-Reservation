@@ -1,0 +1,53 @@
+﻿@page
+@model ProjetReservation.Pages.ChambresHotels.DeleteModel
+@{
+    ViewData["Title"] = "Suppression Chambre Hôtel";
+}
+
+<h1 class="text-center text-danger mb-4">Suppression de la chambre d'hôtel</h1>
+
+<div class="alert alert-warning" role="alert">
+    <strong>Attention :</strong> Cette action est irréversible. Confirmez-vous la suppression de cette chambre ?
+</div>
+
+<div class="card mb-4 shadow-sm">
+    <div class="card-header bg-secondary text-white">
+        Détails de la chambre
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3 fw-bold">Identifiant</dt>
+            <dd class="col-sm-9">@Model.ChambreHotel.Id</dd>
+
+            <dt class="col-sm-3 fw-bold">Description</dt>
+            <dd class="col-sm-9">@Model.ChambreHotel.Description</dd>
+
+            <dt class="col-sm-3 fw-bold">Prix Journalier</dt>
+            <dd class="col-sm-9">@Model.ChambreHotel.PrixJournalier.ToString("C")</dd>
+
+            <dt class="col-sm-3 fw-bold">Type de Chambre</dt>
+            <dd class="col-sm-9">@Model.ChambreHotel.TypeChambre</dd>
+
+            <dt class="col-sm-3 fw-bold">Nombre de Lits</dt>
+            <dd class="col-sm-9">@Model.ChambreHotel.NombreLits</dd>
+
+            <dt class="col-sm-3 fw-bold">Climatisation</dt>
+            <dd class="col-sm-9">@(@Model.ChambreHotel.Climatisation ? "Oui" : "Non")</dd>
+
+            <dt class="col-sm-3 fw-bold">Grandeur (m²)</dt>
+            <dd class="col-sm-9">@Model.ChambreHotel.GrandeurM2</dd>
+
+            <dt class="col-sm-3 fw-bold">Balcon</dt>
+            <dd class="col-sm-9">@(@Model.ChambreHotel.Balcon ? "Oui" : "Non")</dd>
+        </dl>
+    </div>
+</div>
+
+<form method="post" class="mb-3">
+    <input asp-for="ChambreHotel.Id" type="hidden" />
+    <div class="d-flex justify-content-start gap-3">
+        <input type="submit" value="Supprimer" class="btn btn-danger" />
+        <a asp-page="./Index" class="btn btn-secondary">Annuler</a>
+        <a asp-page="./Edit" asp-route-id="@Model.ChambreHotel.Id" class="btn btn-outline-primary ms-auto">Modifier cette chambre</a>
+    </div>
+</form>

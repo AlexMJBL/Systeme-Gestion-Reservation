@@ -1,0 +1,53 @@
+﻿@page
+@model ProjetReservation.Pages.Voitures.DeleteModel
+@{
+    ViewData["Title"] = "Suppression Voiture";
+}
+
+<h1 class="text-center text-danger mb-4">Suppression de la voiture</h1>
+
+<div class="alert alert-warning" role="alert">
+    <strong>Attention :</strong> Cette opération est irréversible. Souhaitez-vous vraiment supprimer ce véhicule ?
+</div>
+
+<div class="card mb-4 shadow-sm">
+    <div class="card-header bg-secondary text-white">
+        Détails du véhicule
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3 fw-bold">Identifiant</dt>
+            <dd class="col-sm-9">@Model.Voiture.Id</dd>
+
+            <dt class="col-sm-3 fw-bold">Description</dt>
+            <dd class="col-sm-9">@Model.Voiture.Description</dd>
+
+            <dt class="col-sm-3 fw-bold">Prix Journalier</dt>
+            <dd class="col-sm-9">@Model.Voiture.PrixJournalier.ToString("C")</dd>
+
+            <dt class="col-sm-3 fw-bold">Marque</dt>
+            <dd class="col-sm-9">@Model.Voiture.Marque</dd>
+
+            <dt class="col-sm-3 fw-bold">Modèle</dt>
+            <dd class="col-sm-9">@Model.Voiture.Modele</dd>
+
+            <dt class="col-sm-3 fw-bold">Année de fabrication</dt>
+            <dd class="col-sm-9">@Model.Voiture.AnneeDeFabrication</dd>
+
+            <dt class="col-sm-3 fw-bold">Nombre de portes</dt>
+            <dd class="col-sm-9">@Model.Voiture.NombreDePortes</dd>
+
+            <dt class="col-sm-3 fw-bold">Nombre de places</dt>
+            <dd class="col-sm-9">@Model.Voiture.NombreDePlaces</dd>
+        </dl>
+    </div>
+</div>
+
+<form method="post" class="mb-3">
+    <input asp-for="Voiture.Id" type="hidden" />
+    <div class="d-flex justify-content-start gap-3">
+        <input type="submit" value="Supprimer" class="btn btn-danger" />
+        <a asp-page="./Index" class="btn btn-secondary">Annuler</a>
+        <a asp-page="./Edit" asp-route-id="@Model.Voiture.Id" class="btn btn-outline-primary ms-auto">Modifier cette voiture</a>
+    </div>
+</form>

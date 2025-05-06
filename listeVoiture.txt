@@ -1,0 +1,26 @@
+Id;Desription;Prix-Journalier;Marque;Modele;Annee-De-Fabrication;Nombre-De-Portes;Nombre-De-Places
+1;Voiture compacte économique;45;Kia;Rio;2021;4;5
+2;Berline confortable pour la ville;60;Ford;Fusion;2020;4;5
+3;VUS moderne et spacieux;85;Mazda;CX-5;2022;5;5
+4;Voiture hybride écologique;70;Toyota;Prius;2023;4;5
+5;Compacte pratique et fiable;50;Hyundai;Elantra;2019;4;5
+6;Coupé sportif urbain;65;Honda;Civic;2021;2;4
+7;VUS familial performant;90;Chevrolet;Equinox;2020;5;7
+8;Voiture citadine agile;40;Nissan;Micra;2022;4;4
+9;Berline avec grand coffre;55;Volkswagen;Passat;2021;4;5
+10;Voiture robuste pour trajets longs;80;Toyota;Camry;2019;4;5
+11;Compacte idéale pour jeunes conducteurs;42;Kia;Soul;2022;4;5
+12;Berline économique;47;Hyundai;Accent;2020;4;5
+13;VUS intermédiaire;88;Ford;Escape;2023;5;5
+14;Voiture performante et écoénergétique;65;Honda;Insight;2022;4;5
+15;Minivan pour familles nombreuses;95;Mazda;Mazda5;2019;5;7
+16;Compacte avec design moderne;53;Volkswagen;Golf;2021;4;5
+17;Voiture urbaine facile à stationner;39;Chevrolet;Spark;2022;4;4
+18;Berline spacieuse et silencieuse;58;Nissan;Altima;2020;4;5
+19;Crossover dynamique;76;Kia;Sportage;2021;5;5
+20;Petite voiture fiable;44;Toyota;Yaris;2023;4;5
+21;VUS urbain moderne;83;Hyundai;Tucson;2022;5;5
+22;Voiture économique longue distance;59;Ford;Focus;2019;4;5
+23;Compacte agile pour la ville;46;Mazda;Mazda3;2020;4;5
+24;Voiture familiale polyvalente;72;Honda;Accord;2023;4;5
+25;Mini-SUV abordable;78;Nissan;Rogue;2021;5;5

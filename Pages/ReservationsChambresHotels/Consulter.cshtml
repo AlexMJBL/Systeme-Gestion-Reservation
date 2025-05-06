@@ -1,0 +1,81 @@
+﻿@page
+@model Gestion_Reservation.Pages.ReservationsChambresHotels.ConsulterModel
+@{
+    ViewData["Title"] = "Détails Réservation Chambre";
+}
+
+<h1 class="text-center mb-5">Détails de la réservation d'une chambre d'hôtel</h1>
+
+<!-- Section réservation -->
+<div class="card mb-4 shadow-sm">
+    <div class="card-header bg-primary text-white">
+        Informations sur la réservation
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3 fw-bold">Identifiant réservation</dt>
+            <dd class="col-sm-9">@Model.ReservationChambreHotel.Id</dd>
+
+            <dt class="col-sm-3 fw-bold">Prénom client</dt>
+            <dd class="col-sm-9">@Model.ReservationChambreHotel.PrenomClient</dd>
+
+            <dt class="col-sm-3 fw-bold">Nom client</dt>
+            <dd class="col-sm-9">@Model.ReservationChambreHotel.NomClient</dd>
+
+            <dt class="col-sm-3 fw-bold">Téléphone client</dt>
+            <dd class="col-sm-9">@Model.ReservationChambreHotel.TelephoneClient</dd>
+
+            <dt class="col-sm-3 fw-bold">Date de début</dt>
+            <dd class="col-sm-9">@Model.ReservationChambreHotel.DateDebut.ToString("yyyy-MM-dd")</dd>
+
+            <dt class="col-sm-3 fw-bold">Date de fin</dt>
+            <dd class="col-sm-9">@Model.ReservationChambreHotel.DateFin.ToString("yyyy-MM-dd")</dd>
+
+            <dt class="col-sm-3 fw-bold">Prix total</dt>
+            <dd class="col-sm-9">@Model.ReservationChambreHotel.Prix.ToString("C")</dd>
+        </dl>
+    </div>
+</div>
+
+<!-- Section chambre -->
+<div class="card mb-4 shadow-sm">
+    <div class="card-header bg-secondary text-white">
+        Informations sur la chambre réservée
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3 fw-bold">Identifiant</dt>
+            <dd class="col-sm-9">@Model.ReservationChambreHotel.ChambreHotel.Id</dd>
+
+            <dt class="col-sm-3 fw-bold">Description</dt>
+            <dd class="col-sm-9">@Model.ReservationChambreHotel.ChambreHotel.Description</dd>
+
+            <dt class="col-sm-3 fw-bold">Prix Journalier</dt>
+            <dd class="col-sm-9">@Model.ReservationChambreHotel.ChambreHotel.PrixJournalier.ToString("C")</dd>
+
+            <dt class="col-sm-3 fw-bold">Type de Chambre</dt>
+            <dd class="col-sm-9">@Model.ReservationChambreHotel.ChambreHotel.TypeChambre</dd>
+
+            <dt class="col-sm-3 fw-bold">Nombre de Lits</dt>
+            <dd class="col-sm-9">@Model.ReservationChambreHotel.ChambreHotel.NombreLits</dd>
+
+            <dt class="col-sm-3 fw-bold">Climatisation</dt>
+            <dd class="col-sm-9">@(@Model.ReservationChambreHotel.ChambreHotel.Climatisation ? "Oui" : "Non")</dd>
+
+            <dt class="col-sm-3 fw-bold">Grandeur (m²)</dt>
+            <dd class="col-sm-9">@Model.ReservationChambreHotel.ChambreHotel.GrandeurM2</dd>
+
+            <dt class="col-sm-3 fw-bold">Balcon</dt>
+            <dd class="col-sm-9">@(@Model.ReservationChambreHotel.ChambreHotel.Balcon ? "Oui" : "Non")</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="d-flex justify-content-between">
+    <a class="btn btn-secondary" asp-page="./Index">Retour à la liste</a>
+    <a class="btn btn-primary" asp-page="../ChambresHotels/Consulter"
+       asp-route-Id="@Model.ReservationChambreHotel.ChambreHotel.Id"
+       asp-route-ReservationId="@Model.ReservationChambreHotel.Id">
+        Consulter la fiche de la chambre
+    </a>
+</div>

@@ -1,0 +1,74 @@
+﻿@page
+@model Reservations.Web.Pages.ReservationsVoitures.EditModel
+@{
+    ViewData["Title"] = "Modifier une réservation";
+}
+
+<h1 class="text-center mb-4">Modifier une réservation de voiture</h1>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form method="post" class="card shadow-sm p-4 bg-light">
+
+            <div class="form-group mb-3">
+                <label asp-for="ReservationVoiture.Id" class="control-label"></label>
+                <input asp-for="ReservationVoiture.Id" class="form-control" readonly />
+                <span asp-validation-for="ReservationVoiture.Id" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="ReservationVoiture.PrenomClient" class="control-label"></label>
+                <input asp-for="ReservationVoiture.PrenomClient" class="form-control" />
+                <span asp-validation-for="ReservationVoiture.PrenomClient" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="ReservationVoiture.NomClient" class="control-label"></label>
+                <input asp-for="ReservationVoiture.NomClient" class="form-control" />
+                <span asp-validation-for="ReservationVoiture.NomClient" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="ReservationVoiture.TelephoneClient" class="control-label"></label>
+                <input asp-for="ReservationVoiture.TelephoneClient" class="form-control" />
+                <span asp-validation-for="ReservationVoiture.TelephoneClient" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="ReservationVoiture.DateDebut" class="control-label"></label>
+                <input asp-for="ReservationVoiture.DateDebut" class="form-control" type="date" />
+                <span asp-validation-for="ReservationVoiture.DateDebut" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="ReservationVoiture.DateFin" class="control-label"></label>
+                <input asp-for="ReservationVoiture.DateFin" class="form-control" type="date" />
+                <span asp-validation-for="ReservationVoiture.DateFin" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="ReservationVoiture.VoitureId" class="control-label">Voiture</label>
+                <select asp-for="ReservationVoiture.VoitureId" class="form-control">
+                    <option value="">-- Choisissez une voiture --</option>
+                    @foreach (var voiture in Model.Voitures)
+                    {
+                        <option value="@voiture.Id">@voiture.Id - @voiture.Description</option>
+                    }
+                </select>
+                <span asp-validation-for="ReservationVoiture.VoitureId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Enregistrer" class="btn btn-success w-100" />
+            </div>
+        </form>
+
+        <div class="mt-3 text-center">
+            <a asp-page="Index" class="btn btn-outline-secondary">Retourner à la liste des réservations de voiture</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

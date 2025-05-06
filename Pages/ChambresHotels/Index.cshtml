@@ -1,0 +1,38 @@
+﻿@page
+@model ProjetReservation.Pages.ChambresHotels.IndexModel
+@{
+    ViewData["Title"] = "Index Chambre Hôtel";
+}
+<h1 class="text-center my-4">Liste des chambres d'hôtel</h1>
+<p class="text-end">
+    <a class="btn btn-primary" asp-page="Create">Nouvelle chambre</a>
+</p>
+
+
+<table class="table table-striped table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Identifiant</th>
+            <th>Type de Chambre</th>
+            <th>Nombre De Lits</th>
+            <th>Prix Journalier</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var chambre in Model.ChambreHotel)
+        {
+            <tr>
+                <td>@chambre.Id</td>
+                <td>@chambre.TypeChambre</td>
+                <td>@chambre.NombreLits</td>
+                <td>@chambre.PrixJournalier</td>
+                <td>
+                    <a class="btn btn-warning btn-sm" asp-page="Edit" asp-route-id="@chambre.Id">Modifier</a> |
+                    <a class="btn btn-primary btn-sm" asp-page="Consulter" asp-route-id="@chambre.Id">Consulter</a> |
+                    <a class="btn btn-danger btn-sm" asp-page="Delete" asp-route-id="@chambre.Id">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,57 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Page d'administration";
+}
+
+<div class="text-center">
+    <h1 class="display-4 mb-4">Bienvenue sur la plateforme d'administration</h1>
+    <p class="lead">Cette plateforme vous permet de gérer les réservations de voitures et de chambres d'hôtel, ainsi que de consulter la liste des véhicules et chambres disponibles.</p>
+
+    <div class="mt-4">
+        <p>En tant qu'administrateur, vous avez accès à un ensemble d'outils pour suivre les réservations et gérer les ressources disponibles.</p>
+
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+                <div class="card shadow-sm mb-4 h-100 d-flex flex-column justify-content-center align-items-center">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Réservations de Voitures</h4>
+                        <p class="card-text">Consultez la liste des réservations de voitures existantes et gérez-les facilement.</p>
+                        <a href="/ReservationsVoitures" class="btn btn-primary">Voir les réservations</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm mb-4 h-100 d-flex flex-column justify-content-center align-items-center">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Réservations d'Hôtels</h4>
+                        <p class="card-text">Accédez à la liste des réservations de chambres d'hôtel pour les gérer efficacement.</p>
+                        <a href="/ReservationsChambresHotels" class="btn btn-primary">Voir les réservations</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm mb-4 h-100 d-flex flex-column justify-content-center align-items-center">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Liste des Véhicules</h4>
+                        <p class="card-text">Consultez et gérez les véhicules disponibles pour la réservation.</p>
+                        <a href="/Voitures" class="btn btn-primary mt-3">Voir les véhicules</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm mb-4 h-100 d-flex flex-column justify-content-center align-items-center">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Liste des Chambres</h4>
+                        <p class="card-text">Accédez à la liste des chambres d'hôtel disponibles sur la plateforme.</p>
+                        <a href="/ChambresHotels" class="btn btn-primary mt-3">Voir les chambres</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+        <a href="https://learn.microsoft.com/aspnet/core" class="btn btn-link">En savoir plus sur ASP.NET Core</a>
+    </div>
+</div>
+

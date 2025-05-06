@@ -1,0 +1,80 @@
+﻿@page
+@using Reservations.Web.Models
+@model ProjetReservation.Pages.Voitures.EditModel
+@{
+    ViewData["Title"] = "Modifier Voiture";
+}
+
+<h1 class="text-center mb-4">Modifier une voiture</h1>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form method="post" class="card shadow-sm p-4 bg-light">
+
+            <div class="form-group mb-3">
+                <label asp-for="Voiture.Id" class="control-label"></label>
+                <input asp-for="Voiture.Id" class="form-control" readonly />
+                <span asp-validation-for="Voiture.Id" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Voiture.Description" class="control-label"></label>
+                <input asp-for="Voiture.Description" class="form-control" />
+                <span asp-validation-for="Voiture.Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Voiture.PrixJournalier" class="control-label"></label>
+                <input asp-for="Voiture.PrixJournalier" class="form-control" />
+                <span asp-validation-for="Voiture.PrixJournalier" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Voiture.Marque" class="control-label"></label>
+                <select asp-for="Voiture.Marque" class="form-control">
+                    @foreach (var type in Enum.GetValues(typeof(Marques)))
+                    {
+                        <option value="@type">@type</option>
+                    }
+                </select>
+                <span asp-validation-for="Voiture.Marque" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Voiture.Modele" class="control-label"></label>
+                <input asp-for="Voiture.Modele" class="form-control" />
+                <span asp-validation-for="Voiture.Modele" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Voiture.AnneeDeFabrication" class="control-label"></label>
+                <input asp-for="Voiture.AnneeDeFabrication" class="form-control" />
+                <span asp-validation-for="Voiture.AnneeDeFabrication" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Voiture.NombreDePortes" class="control-label"></label>
+                <input asp-for="Voiture.NombreDePortes" class="form-control" />
+                <span asp-validation-for="Voiture.NombreDePortes" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-4">
+                <label asp-for="Voiture.NombreDePlaces" class="control-label"></label>
+                <input asp-for="Voiture.NombreDePlaces" class="form-control" />
+                <span asp-validation-for="Voiture.NombreDePlaces" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Enregistrer" class="btn btn-success w-100" />
+            </div>
+        </form>
+
+        <div class="mt-3 text-center">
+            <a asp-page="Index" class="btn btn-outline-secondary">Retourner à la liste des voitures</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
