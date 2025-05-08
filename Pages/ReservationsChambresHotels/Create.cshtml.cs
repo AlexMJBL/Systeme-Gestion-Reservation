@@ -15,14 +15,14 @@ namespace Gestion_Reservation.Pages.ReservationsChambresHotels
 
         public void OnGet()
         {
-            ChambresHotel = gestionReservationChambreHotel.ChambresHotel;
+            ChambresHotel = gestionReservationChambreHotel.Reservables;
             ReservationChambreHotel.Id = gestionReservationChambreHotel.GenererId();
             ReservationChambreHotel.DateDebut = DateTime.Now.AddDays(1);
             ReservationChambreHotel.DateFin = DateTime.Now.AddDays(2);
         }
         public IActionResult OnPost()
         {
-            ChambresHotel = gestionReservationChambreHotel.ChambresHotel;
+            ChambresHotel = gestionReservationChambreHotel.Reservables;
 
             //Validation Date
             if (ReservationChambreHotel.DateDebut < DateTime.Now)
@@ -52,7 +52,7 @@ namespace Gestion_Reservation.Pages.ReservationsChambresHotels
             bool nonDisponible = gestionReservationChambreHotel.EstReserver(ReservationChambreHotel);
             if (nonDisponible)
             {
-                ModelState.AddModelError("ReservationChambreHotel.ChambreHotel", "La chambre n'est pas disponible pour les dates sélectionnées.");
+                ModelState.AddModelError("ReservationChambreHotel.ChambreId", "La chambre n'est pas disponible pour les dates sélectionnées.");
                 return Page();
             }
 

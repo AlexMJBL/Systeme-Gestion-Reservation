@@ -16,14 +16,14 @@ namespace Reservations.Web.Pages.ReservationsVoitures
 
         public void OnGet()
         {
-            Voitures = gestionReservationVoiture.Voitures;
+            Voitures = gestionReservationVoiture.Reservables;
             ReservationVoiture.Id = gestionReservationVoiture.GenererId();
             ReservationVoiture.DateDebut = DateTime.Now.AddDays(1);
             ReservationVoiture.DateFin = DateTime.Now.AddDays(2);
         }
         public IActionResult OnPost()
         {
-            Voitures = gestionReservationVoiture.Voitures;
+            Voitures = gestionReservationVoiture.Reservables;
 
             //Validation Date
             if (ReservationVoiture.DateDebut < DateTime.Now)
@@ -53,7 +53,7 @@ namespace Reservations.Web.Pages.ReservationsVoitures
             bool nonDisponible = gestionReservationVoiture.EstReserver(ReservationVoiture);
             if (nonDisponible)
             {
-                ModelState.AddModelError("ReservationVoiture.Voiture", "La voiture n'est pas disponible pour les dates sélectionnées.");
+                ModelState.AddModelError("ReservationVoiture.VoitureId", "La voiture n'est pas disponible pour les dates sélectionnées.");
                 return Page();
             }
 

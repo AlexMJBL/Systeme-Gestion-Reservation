@@ -19,7 +19,7 @@ namespace Reservations.Web.Pages.ReservationsVoitures
                 return NotFound();
             }
 
-            Voitures = gestionReservationVoiture.Voitures;
+            Voitures = gestionReservationVoiture.Reservables;
             
             var reservation = gestionReservationVoiture.ObtenirParId(id);
 
@@ -33,7 +33,7 @@ namespace Reservations.Web.Pages.ReservationsVoitures
         }
         public IActionResult OnPost()
         {
-            Voitures = gestionReservationVoiture.Voitures;
+            Voitures = gestionReservationVoiture.Reservables;
             ReservationVoiture.Voiture = Voitures.SingleOrDefault(v => v.Id == ReservationVoiture.VoitureId);
 
             //Validation Date
@@ -52,7 +52,7 @@ namespace Reservations.Web.Pages.ReservationsVoitures
             //Validation Voiture
             if (ReservationVoiture.Voiture == null)
             {
-                ModelState.AddModelError("ReservationVoiture.Voiture", "Veuillez sélectionner une voiture.");
+                ModelState.AddModelError("ReservationVoiture.VoitureId", "Veuillez sélectionner une voiture.");
                 return Page();
             }
 
@@ -60,7 +60,7 @@ namespace Reservations.Web.Pages.ReservationsVoitures
             bool nonDisponible = gestionReservationVoiture.EstReserver(ReservationVoiture);
             if (nonDisponible)
             {
-                ModelState.AddModelError("ReservationVoiture.Voiture", "La voiture n'est pas disponible pour les dates sélectionnées.");
+                ModelState.AddModelError("ReservationVoiture.VoitureId", "La voiture n'est pas disponible pour les dates sélectionnées.");
                 return Page();
             }
 

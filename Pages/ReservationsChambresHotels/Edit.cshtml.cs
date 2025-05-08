@@ -19,7 +19,7 @@ namespace Gestion_Reservation.Pages.ReservationsChambresHotels
                 return NotFound();
             }
 
-           ChambresHotel = gestionReservationChambreHotel.ChambresHotel;
+           ChambresHotel = gestionReservationChambreHotel.Reservables;
 
             var reservation = gestionReservationChambreHotel.ObtenirParId(id);
 
@@ -33,7 +33,7 @@ namespace Gestion_Reservation.Pages.ReservationsChambresHotels
         }
         public IActionResult OnPost()
         {
-            ChambresHotel = gestionReservationChambreHotel.ChambresHotel;
+            ChambresHotel = gestionReservationChambreHotel.Reservables;
             ReservationChambreHotel.ChambreHotel = ChambresHotel.SingleOrDefault(v => v.Id == ReservationChambreHotel.ChambreId);
 
             //Validation Date
@@ -61,7 +61,7 @@ namespace Gestion_Reservation.Pages.ReservationsChambresHotels
             bool nonDisponible = gestionReservationChambreHotel.EstReserver(ReservationChambreHotel);
             if (nonDisponible)
             {
-                ModelState.AddModelError("ReservationChambreHotel.ChambreHotel", "La chambre n'est pas disponible pour les dates sélectionnées.");
+                ModelState.AddModelError("ReservationChambreHotel.ChambreId", "La chambre n'est pas disponible pour les dates sélectionnées.");
                 return Page();
             }
 
